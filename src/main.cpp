@@ -1,8 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 int main() {
-    const int windowWidth = 1280;
-    const int windowHeight = 720;
+    const int windowWidth = 1280, windowHeight = 720;
 	glfwInit();
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -10,9 +9,7 @@ int main() {
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "GLVK", NULL, NULL);
-	if( window == NULL) {
-	    return -1;
-	}
+	if( window == NULL)   return -1;
 	glfwMakeContextCurrent(window);
 
 	gladLoadGL();
@@ -21,10 +18,7 @@ int main() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glfwSwapBuffers(window);
 
-	while(!glfwWindowShouldClose(window)) {
-        glfwPollEvents();
-	}
-
+	while(!glfwWindowShouldClose(window))   glfwPollEvents();
 	glfwDestroyWindow(window);
 	glfwTerminate();
 	return 0;
