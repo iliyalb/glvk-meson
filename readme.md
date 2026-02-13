@@ -10,8 +10,8 @@ OpenGL + Vulkan multi-API project
 
 Use linux package manager to install `g++`, `glfw`, and `glad`.
 
-> [!OPTIONAL]
-> copy [glad](https://glad.dav1d.de/) web service include directories `glad` and `KHR` to `/usr/include/`
+> \[!TIP]
+> Optionally copy [glad](https://glad.dav1d.de/) web service include directories `glad` and `KHR` to `/usr/include/`. Meson will link vendor headers against system libraries regardless.
 
 ### Windows
 
