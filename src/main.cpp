@@ -1,25 +1,13 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+VkRenderer g_vkRenderer;
+
 int main() {
-    const int windowWidth = 1280, windowHeight = 720;
-	glfwInit();
-
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-	GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "GLVK", NULL, NULL);
-	if( window == NULL)   return -1;
-	glfwMakeContextCurrent(window);
-
-	gladLoadGL();
-	glViewport(0, 0, windowWidth, windowHeight);
-	glClearColor(0.05f, 0.15f, 0.20f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
-	glfwSwapBuffers(window);
-
-	while(!glfwWindowShouldClose(window))   glfwPollEvents();
-	glfwDestroyWindow(window);
+    glfwInit();
+    g_vkRenderer.createWindow();
+    GLFWwindow* window_ptr = g_vkRenderer.getWindow();
+    g_vkRenderer.initialize(window_ptr);
+    while(!glfwWindowShouldClose(window_ptr)) glfwPollEvents();
+    g_vkRenderer.destroy();
+   	glfwDestroyWindow(window_ptr);
 	glfwTerminate();
-	return 0;
+    return 0;
 }
