@@ -13,6 +13,7 @@ _Pragma("GCC diagnostic ignored \"-Wunused-parameter\"")
 #include <vector>
 
 // vendor
+#include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <SDL3/SDL_vulkan.h>
 #include <shaderc/shaderc.hpp>
@@ -22,6 +23,8 @@ _Pragma("GCC diagnostic ignored \"-Wunused-parameter\"")
 #include <vulkan/vulkan_core.h>
 
 // project
+#include <sdl_utility.hpp>
+#include <sdl_renderer.hpp>
 #include <vk_utility.hpp>
 #include <vk_renderer.hpp>
 #include <gl_renderer.hpp>

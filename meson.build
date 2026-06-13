@@ -13,6 +13,7 @@ vulkan_dep = dependency('vulkan', required : true)
 sources = [
   'src/main.cpp',
   'src/glad.c',
+  'src/sdl_renderer.cpp',
   'src/vk_renderer.cpp',
   'src/gl_renderer.cpp'
 ]
