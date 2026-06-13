@@ -5,12 +5,17 @@ _Pragma("GCC diagnostic ignored \"-Wunused-parameter\"")
 
 // standard
 #include <algorithm>
+#include <array>
 #include <cstdlib>
 #include <stdexcept>
+#include <string>
 #include <string_view>
 #include <vector>
 
 // vendor
+#include <SDL3/SDL_main.h>
+#include <SDL3/SDL_vulkan.h>
+#include <shaderc/shaderc.hpp>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.h>
