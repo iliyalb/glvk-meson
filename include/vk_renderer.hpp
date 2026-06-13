@@ -18,6 +18,7 @@ private:
             VkDevice m_logical;
     } m_device;
     VkQueue m_graphicsQueue;
+    VkSurfaceKHR m_surface;
 
     void createInstance();
     void getPhysicalDevice();
