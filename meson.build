@@ -14,6 +14,7 @@ sources = [
   'src/main.cpp',
   'src/glad.c',
   'src/sdl_renderer.cpp',
+  'src/sdl_utility.cpp',
   'src/vk_renderer.cpp',
   'src/gl_renderer.cpp'
 ]
