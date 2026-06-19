@@ -1,6 +1,3 @@
-#define VOLK_IMPLEMENTATION
-#define VMA_IMPLEMENTATION
-
 bool SdlRenderer::Initialize() {
    	SDL_InitSubSystem(SDL_INIT_VIDEO);
 	m_window_ptr = SDL_CreateWindow("Vulkan", m_width, m_height, SDL_WINDOW_VULKAN | SDL_WINDOW_RESIZABLE);

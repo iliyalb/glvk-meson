@@ -22,12 +22,12 @@ _Pragma("clang diagnostic ignored \"-Wpadded\"")
 // vendor
 #include <vulkan/vulkan.h>
 #include <vulkan/vulkan_core.h>
+#include <shaderc/shaderc.hpp>
 #include <volk/volk.h>
 #include <vma/vk_mem_alloc.h>
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <SDL3/SDL_vulkan.h>
-#include <shaderc/shaderc.hpp>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 

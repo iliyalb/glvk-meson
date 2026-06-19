@@ -10,6 +10,12 @@ sdl3_dep = dependency('sdl3', required : true)
 dl_dep = meson.get_compiler('cpp').find_library('dl', required : true)
 vulkan_dep = dependency('vulkan', required : true)
 
+# pch force-include prevention
+impl_lib = static_library('volk_vma_impl',
+    sources : ['src/volk_impl.cpp', 'src/vma_impl.cpp'],
+    include_directories : inc,
+    dependencies : [vulkan_dep])
+
 sources = [
   'src/main.cpp',
   'src/glad.c',
@@ -22,5 +28,6 @@ sources = [
 executable('glvk.out',
   sources : sources,
   include_directories : inc,
+  link_with : [impl_lib],
   dependencies : [glfw_dep, sdl3_dep, dl_dep, vulkan_dep],
   cpp_pch : 'include/pch.hpp')
