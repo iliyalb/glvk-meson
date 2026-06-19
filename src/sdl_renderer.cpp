@@ -1,3 +1,8 @@
+#define VOLK_IMPLEMENTATION
+#include <volk.h>
+#define VMA_IMPLEMENTATION
+#include <vma/vk_mem_alloc.h>
+
 bool SdlRenderer::Initialize() {
    	SDL_InitSubSystem(SDL_INIT_VIDEO);
 	m_window_ptr = SDL_CreateWindow("Vulkan", m_width, m_height, SDL_WINDOW_VULKAN | SDL_WINDOW_RESIZABLE);
@@ -92,7 +97,7 @@ bool SdlRenderer::createVulkanInstance() {
 		"VK_LAYER_KHRONOS_validation"
 	};
 
-	VkInstanceCreateInfo instCreateInfo {
+	VkInstanceCreateInfo m_instCreateInfo {
 		.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO,
 		.pApplicationInfo = &appInfo,
 		.enabledLayerCount = static_cast<uint32_t>(m_requestedLayers.size()),
@@ -101,7 +106,8 @@ bool SdlRenderer::createVulkanInstance() {
 		.ppEnabledExtensionNames = c_extensions
 	};
 
-	if (vkCreateInstance(&instCreateInfo, nullptr, &m_vulkanInstance) != VK_SUCCESS) {
+	if (vkCreateInstance(&m_instCreateInfo, nullptr, &m_vulkanInstance) != VK_SUCCESS) {
+	    std::cout << "[ERROR] vulkan validation layer unavailable" << std::endl;
 		return false;
 	}
 

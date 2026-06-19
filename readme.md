@@ -8,7 +8,7 @@ OpenGL + Vulkan with SDL3 multi-API project
 
 ### Linux
 
-Use linux package manager to install `g++`, `glfw`, and `glad`.
+Use linux package manager to install `g++`, `glfw`, `glad`, `sdl3`, `volk`, and `vulkan-validation-layers`.
 
 > \[!TIP]
 > Optionally copy [glad](https://glad.dav1d.de/) web service include directories `glad` and `KHR` to `/usr/include/`.
