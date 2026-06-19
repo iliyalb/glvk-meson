@@ -2,6 +2,8 @@
 
 ## About
 
+![app window](sample.png)
+
 OpenGL + Vulkan with SDL3 multi-API project
 
 ## Setup
